@@ -39,12 +39,16 @@ module.exports.home = function (req, res) {
 
 // adding task to the db 
 module.exports.add = function (req, res) {
+// =================xxxxxx I ADDED THIS BELOW CODE INTENTIONALY, PLS DON'T MIND THIS ==========
+
     // console.log(req.body.date);
     // taskList.push({
     //     task: req.body.task,
     //     date: req.body.date,
     //     category: req.body.category
     // })
+
+//   XXXXXXXXXXXXXXXXXX======================XXXXXXXXXXXXXXXXXXXXXXX  
 
     Todo.create({
         task: req.body.task,
@@ -54,7 +58,7 @@ module.exports.add = function (req, res) {
         if (err) {
             console.log('error in newTodo=>', err);
         } else {
-            console.log("*****===>", newTodo);
+            // console.log("*****===>", newTodo);
             return res.redirect('/');
         }
     })
