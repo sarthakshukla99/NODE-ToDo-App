@@ -1,13 +1,15 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-body{
+
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 90%;
     margin: auto;
@@ -15,87 +17,91 @@ body{
 }
 
 
-.head{
+.head {
     font-family: monospace;
     font-size: xx-large;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.head h1{
+.head h1 {
     margin: 12px 0;
 }
 
 
 /* form data starts  */
 
-form{
+form {
     margin-bottom: 33px;
 }
 
-.desc{
+.desc {
     width: 100%;
     /* height: 20; */
 }
 
-.desc label{
+.desc label {
     position: absolute;
     color: grey;
 }
 
-.desc input{
+.desc input {
     border: none;
     width: 100%;
     height: 64px;
 }
 
-.desc input:focus{
+.desc input:focus {
     outline: none;
 }
 
-.col-2{
+.cut{
+    text-decoration: line-through;
+}
+
+.col-2 {
     display: flex;
 }
 
-.col-2 P{
+.col-2 P {
     margin: 0 0 4px 0;
     color: grey;
 }
 
 /* category and date section  */
 
-.category{
+.category {
     width: 50%;
     border-right: 1px solid grey;
 }
 
-.category select{
+.category select {
     height: 32px;
     border: none;
     width: 90%;
 }
 
-.category select:focus{
+.category select:focus {
     outline: none;
 }
 
-.date{
+.date {
     width: 50%;
     margin-left: 10px;
 }
 
-.date input{
+.date input {
     border: none;
     width: 30%;
     height: 32px;
 }
 
-.date input:focus{
+.date input:focus {
     outline: none;
 }
 
-.btns{
+.btns {
     width: 100%;
     text-align: center;
     margin-top: 5vh;
@@ -103,11 +109,12 @@ form{
     justify-content: center;
     align-items: center;
 }
-.btns i{
+
+.btns i {
     margin-right: 10px;
 }
 
-.btns .submit{
+.btns .submit {
     background-color: darkslategray;
     color: white;
     border: none;
@@ -117,18 +124,51 @@ form{
     margin-right: 3px;
 }
 
-.delete_div{
+.delete_div {
     background-color: #cd0000;
     width: 189px;
     height: 56px;
     font-size: x-large;
     text-decoration: none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 3.4px;
 }
 
-.delete_div a{
+.delete_div a {
     color: white;
+}
+
+
+/* task container starts  */
+
+/* .taskContainer {} */
+
+
+.task {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    color: grey;
+}
+
+.task input[type="checkbox"]{
+    width: 32px;
+    height: 22px;
+}
+
+.task .task_info {
+    margin-left: 20px;
+    width: 88%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task .category_name{
+    background-color: orange;
+    color: white;
+    padding: 12px;
 }

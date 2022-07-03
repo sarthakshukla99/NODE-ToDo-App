@@ -14,13 +14,14 @@
         </div>
         <hr />
 
-        <form action="" method="post">
+        <form action="/add_task" method="post">
             <div class="desc">
                 <label for="desc">DESCRIPTION</label>
                 <input
                     type="text"
-                    name="desc"
+                    name="task"
                     placeholder="What do you need to do?"
+                    id="task"
                     required
                 />
             </div>
@@ -28,15 +29,17 @@
             <div class="col-2">
                 <div class="category">
                     <p>CATEGORY</p>
-                    <select name="select_cat" id="">
+
+                    <select id="select_cat" name="category">
                         <option value="none" selected disabled hidden>
                             Choose Category
                         </option>
-                        <option value="Personal">Personal</option>
-                        <option value="Work">Work</option>
-                        <option value="School">School</option>
-                        <option value="Others">Others</option>
+                        <option value="Personal" >Personal</option>
+                        <option value="Work" >Work</option>
+                        <option value="School" >School</option>
+                        <option value="Others" >Others</option>
                     </select>
+
                 </div>
 
                 <div class="date">
@@ -53,6 +56,34 @@
         </form>
         <hr>
 
-        <script type="text/javascript" src="/js/home.js"></script>
+        <!-- tasks starts  -->
+
+        <div class="taskContainer">
+            <% for( let i of task_List ) { %>
+                <div class="task">
+                    <input type="checkbox" name="check" id="check" class="check">
+    
+                    <div id="task_info" class="task_info">
+    
+                        <div class="task_left">
+                            <p id="task_main" class="task_main "><%= i.task %> </p>
+                            <p><%= i.date %> </p>
+                        </div>
+    
+                        <div class="category_name">
+                            <p><%= i.category %> </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr>
+            <% } %>
+
+
+            
+        </div>
+        
+
+        <script type="text/javascript" src="/js/app.js"></script>
     </body>
 </html>
