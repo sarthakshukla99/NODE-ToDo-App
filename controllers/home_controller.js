@@ -55,11 +55,17 @@ module.exports.add = function (req, res) {
             return res.redirect('/');
         }
     }
-    )
-
-
-
-
+    )  
     
-    
+}
+
+
+module.exports.delete = function(req,res){
+    Todo.deleteMany({}).then(()=>{
+        console.log('data deleted');
+        res.redirect('/')
+    }).catch((err)=>{
+        console.log('err in deleting=>',err)
+        return res.redirect('/')
+})
 }
