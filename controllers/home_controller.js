@@ -1,4 +1,6 @@
 const Todo = require('../models/todo');
+
+// dummy data 
 var taskList = [{
         task: "Go for shopping",
         date: "May 2,2022",
@@ -16,7 +18,7 @@ var taskList = [{
     },
 ]
 
-
+// send data to home page 
 module.exports.home = function (req, res) {
 
     Todo.find({}, function (err, todos) {
@@ -35,6 +37,7 @@ module.exports.home = function (req, res) {
 };
 
 
+// adding task to the db 
 module.exports.add = function (req, res) {
     // console.log(req.body.date);
     // taskList.push({
@@ -47,25 +50,26 @@ module.exports.add = function (req, res) {
         task: req.body.task,
         date: req.body.date,
         category: req.body.category
-    },function(err,newTodo){
-        if(err){
-            console.log('error in newTodo=>',err);
-        }else{
-            console.log("*****===>",newTodo);
+    }, function (err, newTodo) {
+        if (err) {
+            console.log('error in newTodo=>', err);
+        } else {
+            console.log("*****===>", newTodo);
             return res.redirect('/');
         }
-    }
-    )  
-    
+    })
+
 }
 
 
-module.exports.delete = function(req,res){
-    Todo.deleteMany({}).then(()=>{
+
+// deletin all the tasks 
+module.exports.delete = function (req, res) {
+    Todo.deleteMany({}).then(() => {
         console.log('data deleted');
         res.redirect('/')
-    }).catch((err)=>{
-        console.log('err in deleting=>',err)
+    }).catch((err) => {
+        console.log('err in deleting=>', err)
         return res.redirect('/')
-})
+    })
 }
