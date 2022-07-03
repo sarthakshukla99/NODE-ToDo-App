@@ -1,7 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000
+const db = require('./config/mongoose');
+const port = 3000;
+
+const Todo = require('./models/todo');
+
 // for parsing the data (middleware)
 app.use(express.urlencoded());  
 
