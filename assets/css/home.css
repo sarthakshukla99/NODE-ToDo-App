@@ -168,7 +168,29 @@ form {
     justify-content: space-between;
 }
 
-.task .category_name{
+.right_section{
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right_section .delete_task {
+    background-color: red;
+    color: white;
+    width: 132px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_task a{
+    color: white;
+    text-decoration: none;
+}
+
+.task .right_section .category_name{
     background-color: orange;
     color: white;
     width: 87px;

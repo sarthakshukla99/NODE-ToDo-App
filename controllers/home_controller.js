@@ -67,13 +67,24 @@ module.exports.add = function (req, res) {
 
 
 
-// deletin all the tasks 
-module.exports.delete = function (req, res) {
+// deleting all the tasks 
+module.exports.deleteAll = function (req, res) {
     Todo.deleteMany({}).then(() => {
         console.log('data deleted');
         res.redirect('/')
     }).catch((err) => {
         console.log('err in deleting=>', err)
         return res.redirect('/')
+    })
+}
+
+
+// <!-- deleting a particular task  -->
+module.exports.delete = function(req,res){
+    Todo.findByIdAndDelete(req.params.id, function(err){
+        if(err){
+            console.log('error in deleting');
+        }
+        return res.redirect('back');
     })
 }

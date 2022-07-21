@@ -65,7 +65,7 @@
 
             <div class="btns">
                 <button type="submit" class="submit"><i class="fas fa-plus"></i>Add Task</button>
-                <div class="delete_div"><a href="/delete-contact/ " id="delete"><i class="fas fa-trash-alt"></i>Delete Tasks</a></div>
+                <div class="delete_div"><a href="/delete-all/ " id="delete"><i class="fas fa-trash-alt"></i>Delete Tasks</a></div>
             </div>
         </form>
         <hr>
@@ -82,10 +82,19 @@
                         <div class="task_left">
                             <p id="task_main" class="task_main "><%= i.task %> </p>
                             <p><%= i.date %> </p>
+                            
                         </div>
-    
-                        <div class="category_name">
-                            <p><%= i.category %> </p>
+                        
+                        <div class="right_section">
+                            <!-- deleting a particular task  -->
+                            <div class="delete_task">
+                                <a href="/delete-task/<%= i._id %>  " id="delete"><i class="fas fa-trash"></i>&nbsp;Delete Task</a>
+                            </div>
+
+                            <div class="category_name">
+                                <p><%= i.category %> </p>
+                            </div>
+                            
                         </div>
                     </div>
                     
